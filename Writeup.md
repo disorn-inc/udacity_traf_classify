@@ -2,7 +2,6 @@
 
 ## Writeup
 
-### Author: Sergey Morozov
 
 ---
 
