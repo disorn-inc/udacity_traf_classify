@@ -171,7 +171,7 @@ The code can be found in the section *Step 3: Test a Model on New Images*, *Load
 Here are the results of the prediction:
 
 |                  PREDICTED                  |                   ACTUAL                    |
-|:-----------------------------------------------------------------------------------------:|
+|:-------------------------------------------:|:-------------------------------------------:|
 | 0            Speed limit (20km/h)           | 1            Speed limit (30km/h)           |
 | 11  Right-of-way at the next intersection   | 11  Right-of-way at the next intersection   |
 | 15               No vehicles                | 15               No vehicles                |
