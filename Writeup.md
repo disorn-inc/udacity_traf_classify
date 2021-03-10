@@ -8,7 +8,7 @@
 **Build a Traffic Sign Recognition Project**
 
 The goals/steps of this project are the following:
-* Load the dataset (included into this repository in [traffic-sign-data](./traffic-sign-data) directory)
+* Load the dataset
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
