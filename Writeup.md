@@ -114,7 +114,7 @@ The following hyperparameters were defined and **carefully** adjusted:
 RATE       = 0.0008
 
 # number of training epochs; here the model stops improving; we do not want it to overfit
-EPOCHS     = 30
+EPOCHS     = 20
 
 # size of the batch of images per one train operation; surprisingly with larger batch sizes neural network reached lower performance
 BATCH_SIZE = 128
@@ -128,9 +128,9 @@ STDDEV     = 0.01
 
 #### Solution Approach
 
-In average the trained model correctly classifies traffic on the validation set in 96% cases, 
-on the training set in 99% cases and on the test set in 93.5% cases. The decimal part mostly depends on the
-data shuffling that is random. The best result I observed was 97% of correct classifications on the validation set; 
+In average the trained model correctly classifies traffic on the validation set in 94% cases, 
+on the training set in 99% cases and on the test set in 92.5% cases. The decimal part mostly depends on the
+data shuffling that is random.  
 unfortunately, that model was overfitted and performed worse on other images.
 
 The code can be found in section *Step 2: Design and Test a Model Architecture*, 
@@ -163,7 +163,7 @@ At the 32x32 resolution and low brightness or contrast, they are hardly distingu
 Surprisingly, on these five images, the performance of the predictions was 100%. However, when the similar model was
 trained with 50 epochs, there was a mistake with "speed limit 30 km/h" traffic sign, the model was overfitted.
 There may be mistakes on other types of images. With other models, I had a problem with "end of all speed and passing limits"
-traffic sign classification. Also, the results on the test set were not perfect (93.5%), so, certainly, there are images
+traffic sign classification. Also, the results on the test set were not perfect (92.5%), so, certainly, there are images
 somewhere on the web that this model will not be able to recognize.
 
 The code can be found in the section *Step 3: Test a Model on New Images*, *Load and Output the Images* subsection.
@@ -171,12 +171,13 @@ The code can be found in the section *Step 3: Test a Model on New Images*, *Load
 Here are the results of the prediction:
 
 |                  PREDICTED                  |                   ACTUAL                    |
-|:-------------------------------------------:|:-------------------------------------------:|
-| 1            Speed limit (30km/h)           | 1            Speed limit (30km/h)           |
-| 12              Priority road               | 12              Priority road               |
+---------------------------------------------------------------------------------------------
+| 11  Right-of-way at the next intersection   | 1            Speed limit (30km/h)           |
 | 11  Right-of-way at the next intersection   | 11  Right-of-way at the next intersection   |
-| 14                   Stop                   | 14                   Stop                   |
 | 15               No vehicles                | 15               No vehicles                |
+| 12              Priority road               | 12              Priority road               |
+| 14                   Stop                   | 14                   Stop                   |
+---------------------------------------------------------------------------------------------
 
 #### Model Certainty - Softmax Probabilities
 
@@ -188,8 +189,8 @@ but not totally. Below are top 5 softmax probabilities for "**no vehicles**" tra
 
 | Probability           |     Prediction                                | 
 |:---------------------:|:---------------------------------------------:| 
-| 0.756710649           | No vehicles                                   | 
-| 0.122047313           | Speed limit (30km/h)                          |
-| 0.0512931943          | Priority road                                 |
-| 0.0313977301          | Stop                                          |
-| 0.0146821784          | No passing                                    |
+| 0.703939676           | No vehicles                                   | 
+| 0.164600641           | Speed limit (30km/h)                          |
+| 0.0556251705          | Priority road                                 |
+| 0.0262013786          | Stop                                          |
+| 0.0196295772          | No passing                                    |
